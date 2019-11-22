@@ -63,4 +63,21 @@ public class AssocieController {
 
 		return result;
 	}
+
+	public ArrayList<Associe> getAssocieWhoBorrowedLivre(String titre) throws SQLException {
+		ResultSet associes = db.query("select * from Emprunte join Livre using(LIV_ID) join Associe using(ASS_ID) where LIV_TITRE = '" + titre + "';");
+		ArrayList<Associe> result = new ArrayList<>();
+
+		while(associes.next()) {
+			Associe associe = new Associe();
+
+			associe.setId(associes.getInt("ASS_ID"));
+			associe.setNom(associes.getString("ASS_NOM"));
+			associe.setPrenom(associes.getString("ASS_PRENOM"));
+
+			result.add(associe);
+		}
+
+		return result;
+	}
 }
