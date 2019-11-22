@@ -8,6 +8,10 @@ public class Livre {
     String auteur;
     Date date;
 
+    public Livre() {
+        super();
+    }
+
     public Livre(int id, String titre, String auteur, Date date) {
         this.id = id;
         this.titre = titre;

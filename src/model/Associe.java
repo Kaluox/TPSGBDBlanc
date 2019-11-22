@@ -5,6 +5,10 @@ public class Associe {
     private String nom;
     private String prenom;
 
+    public Associe() {
+        super();
+    }
+
     public Associe(int id, String nom, String prenom) {
         this.id = id;
         this.nom = nom;
