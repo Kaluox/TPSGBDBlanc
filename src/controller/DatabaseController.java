@@ -95,7 +95,7 @@ public class DatabaseController {
 	public ResultSet query(String sql) throws SQLException{
 		Statement stmt = connection.createStatement();
 		return stmt.executeQuery(
-				sql
+			sql
 		);
 	}
 
@@ -107,7 +107,7 @@ public class DatabaseController {
 	public void execute(String sql) throws SQLException {
 		Statement stmt = connection.createStatement();
 		stmt.executeUpdate(
-				sql
+			sql
 		);
 	}
 }
