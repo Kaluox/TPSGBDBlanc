@@ -102,4 +102,12 @@ public class LivreController {
 
 		return result;
 	}
+
+	public void addCopy(int id) throws SQLException
+	{
+		ResultSet livre = db.query("select * from Livre where LIV_ID = " + id);
+		livre.next();
+
+		db.execute("insert into Livre(LIV_TITRE, LIV_AUTEUR, LIV_DATE) values('" + livre.getString("LIV_TITRE") + "', '" + livre.getString("LIV_AUTEUR") + "', '" + livre.getDate("LIV_DATE") +"';");
+	}
 }
