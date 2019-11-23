@@ -47,11 +47,11 @@ public class DatabaseController {
 	/**
 	 * Rempli les membres de la classe et essaye de se connecter à la base
 	 */
-	public DatabaseController(String host, int port, String dbType, String dbName, String parameters, String user, String password) {
+	public DatabaseController(String host, int port, String type, String name, String parameters, String user, String password) {
 		this.host = host;
 		this.port = port;
-		this.type = dbType;
-		this.name = dbName;
+		this.type = type;
+		this.name = name;
 		this.parameters = parameters;
 		this.user = user;
 		this.password = password;
