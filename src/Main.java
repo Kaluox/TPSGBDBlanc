@@ -1,7 +1,27 @@
+import controller.DatabaseController;
+import controller.LivreController;
+import model.Livre;
+import view.LivreView;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 public class Main {
 	public static void main(String[] args){
-		System.out.println("Hello !");
-	}
+		System.out.println("Starting App !");
+
+        DatabaseController dbController = new DatabaseController("localhost", 3306, "mysql", "tpsgbdblanc", "useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+        LivreController livreController = new LivreController(dbController);
+
+        try {
+            ArrayList<Livre> livres = livreController.getAllLivres();
+            new LivreView(livres).display();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 
