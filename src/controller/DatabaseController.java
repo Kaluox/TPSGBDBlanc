@@ -59,7 +59,7 @@ public class DatabaseController {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			connect();
+			connection = connect();
 		}
 		catch (ClassNotFoundException e) {
 			System.out.println("Pilote non trouvé !");

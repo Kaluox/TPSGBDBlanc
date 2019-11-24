@@ -14,25 +14,25 @@ public class LivreController {
 	}
 
 	public ArrayList<Livre> getAllLivres() throws SQLException {
-		ResultSet livres = db.query("select * from Livres order by titre asc;");
+		ResultSet livres = db.query("select * from Livre order by LIV_TITRE asc;");
 
 		return populateList(livres);
 	}
 
 	public ArrayList<Livre> getLivreByTitle(String titre) throws SQLException {
-		ResultSet livres = db.query("select * from Livres where LIV_TITRE = '" + titre + "' order by titre asc;");
+		ResultSet livres = db.query("select * from Livre where LIV_TITRE = '" + titre + "' order by LIV_TITRE asc;");
 
 		return populateList(livres);
 	}
 
 	public ArrayList<Livre> getLivreByAuthor(String author) throws SQLException {
-		ResultSet livres = db.query("select * from Livres where LIV_AUTEUR = '" + author + "' order by titre asc;");
+		ResultSet livres = db.query("select * from Livre where LIV_AUTEUR = '" + author + "' order by LIV_TITRE asc;");
 
 		return populateList(livres);
 	}
 
 	public ArrayList<Livre> getLivreByDate(String date) throws SQLException {
-		ResultSet livres = db.query("select * from Livres where LIV_DATE = '" + date + "' order by titre asc;");
+		ResultSet livres = db.query("select * from Livre where LIV_DATE = '" + date + "' order by LIV_TITRE asc;");
 
 		return populateList(livres);
 	}
